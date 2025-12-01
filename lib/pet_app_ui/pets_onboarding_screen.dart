@@ -166,7 +166,7 @@ class _PetsOnboardingScreenState extends State<PetsOnboardingScreen> {
             ],
           ),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Text.rich(
           TextSpan(
             style: TextStyle(
@@ -185,7 +185,7 @@ class _PetsOnboardingScreenState extends State<PetsOnboardingScreen> {
           ),
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           onboards[index].text,
           style: TextStyle(fontSize: 15.5, color: Colors.black38),
