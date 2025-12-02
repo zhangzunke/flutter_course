@@ -13,6 +13,7 @@ class BaseController extends GetxController {
       currentIndex.value = newIndex;
     }
     */
+    //
     if (currentIndex.value == newIndex) {
       Get.nestedKey(
         currentIndex,
