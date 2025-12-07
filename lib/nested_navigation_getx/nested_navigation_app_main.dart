@@ -3,8 +3,8 @@ import 'package:flutter_course/nested_navigation_getx/base_screen.dart';
 import 'package:get/get.dart';
 import 'base_controller.dart';
 
-class NestedNavigationApp extends StatelessWidget {
-  NestedNavigationApp({super.key}) {
+class NestedNavigationAppMain extends StatelessWidget {
+  NestedNavigationAppMain({super.key}) {
     Get.put<BaseController>(BaseController());
   }
 

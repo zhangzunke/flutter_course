@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/nested_navigation_getx/nested_navigation_app.dart';
+import 'package:flutter_course/doctor_appoinment_app/doctor_appoinment_app_main.dart';
 
 void main() {
-  runApp(NestedNavigationApp());
+  // runApp(PetAppMain());
+  // runApp(NestedNavigationAppMain());
+  runApp(DoctorAppoinmentAppMain());
 }
