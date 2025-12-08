@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/doctor_appoinment_app/home_screen.dart';
+import 'package:flutter_course/doctor_appoinment_app/views/home_screen.dart';
+import 'package:flutter_course/doctor_appoinment_app/views/schedule_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final pages = [HomeScreen(), Scaffold(), Scaffold(), Scaffold()];
+    final pages = [HomeScreen(), Scaffold(), ScheduleScreen(), Scaffold()];
     return Scaffold(
       backgroundColor: Colors.white,
       body: pages[selectedIndex],
