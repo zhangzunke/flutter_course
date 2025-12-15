@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/getx_course/basic_course/routes/app_pages.dart';
+import 'package:flutter_course/getx_course/basic_course/views/lang/translation_service.dart';
 import 'package:get/get.dart';
 
 class BasicCourseAppMain extends StatelessWidget {
@@ -10,6 +11,9 @@ class BasicCourseAppMain extends StatelessWidget {
     return GetMaterialApp(
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
+      locale: TranslationService.locale,
+      fallbackLocale: TranslationService.fallbackLocal,
+      translations: TranslationService(),
     );
   }
 }

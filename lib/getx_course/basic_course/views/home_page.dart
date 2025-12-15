@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/getx_course/basic_course/routes/app_routes.dart';
 import 'package:flutter_course/getx_course/basic_course/views/detail_page.dart';
+import 'package:flutter_course/getx_course/basic_course/views/lang/lang_page.dart';
 import 'package:flutter_course/getx_course/basic_course/views/state_getx/get_builder_page.dart';
 import 'package:flutter_course/getx_course/basic_course/views/state_getx/obx_view.dart';
 import 'package:flutter_course/getx_course/basic_course/views/state_getx/state_getx_page.dart';
@@ -156,6 +157,37 @@ class HomePage extends StatelessWidget {
             subtitle: Text('Get.toNamed(AppRoutes.lazyDependency)'),
             onTap: () {
               Get.toNamed(AppRoutes.lazyDependency);
+            },
+          ),
+          Divider(),
+          Text('GetConnection'),
+          Divider(),
+          ListTile(
+            title: Text(
+              'Get Connection + Freezd + JsonSerializable + PageState',
+            ),
+            subtitle: Text('Get.toNamed(AppRoutes.user)'),
+            onTap: () {
+              Get.toNamed(AppRoutes.user);
+            },
+          ),
+          ListTile(
+            title: Text(
+              'Get Connection + Freezd + JsonSerializable + StateMixin',
+            ),
+            subtitle: Text('Get.toNamed(AppRoutes.userMixin)'),
+            onTap: () {
+              Get.toNamed(AppRoutes.userMixin);
+            },
+          ),
+          Divider(),
+          Text('Lang'),
+          Divider(),
+          ListTile(
+            title: Text('Lang'),
+            subtitle: Text('Get.to(LangPage())'),
+            onTap: () {
+              Get.to(LangPage());
             },
           ),
         ],

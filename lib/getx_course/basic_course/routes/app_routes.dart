@@ -9,4 +9,6 @@ class AppRoutes {
   static const dependencyNext = '/dependencyNext';
   static const lazyDependency = '/lazydependency';
   static const lazyDependencyNext = '/lazydependencyNext';
+  static const user = '/user';
+  static const userMixin = '/user-mixin';
 }

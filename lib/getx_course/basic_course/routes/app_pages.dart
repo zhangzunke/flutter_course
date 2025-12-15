@@ -1,5 +1,9 @@
 import 'package:flutter_course/getx_course/basic_course/middlewares/auth_middleware.dart';
 import 'package:flutter_course/getx_course/basic_course/routes/app_routes.dart';
+import 'package:flutter_course/getx_course/basic_course/views/connection/mixin_state/user_mixin_binding.dart';
+import 'package:flutter_course/getx_course/basic_course/views/connection/mixin_state/user_mixin_page.dart';
+import 'package:flutter_course/getx_course/basic_course/views/connection/page_state/user_binding.dart';
+import 'package:flutter_course/getx_course/basic_course/views/connection/page_state/user_page.dart';
 import 'package:flutter_course/getx_course/basic_course/views/dependency/dependency_bind.dart';
 import 'package:flutter_course/getx_course/basic_course/views/dependency/dependency_next_page.dart';
 import 'package:flutter_course/getx_course/basic_course/views/dependency/dependency_page.dart';
@@ -55,6 +59,16 @@ class AppPages {
           page: () => LazyDependencyNextPage(),
         ),
       ],
+    ),
+    GetPage(
+      name: AppRoutes.user,
+      page: () => UserPage(),
+      binding: UserBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.userMixin,
+      page: () => UserMixinPage(),
+      binding: UserMixinBinding(),
     ),
   ];
 }
