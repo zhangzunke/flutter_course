@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BaseProvider extends GetConnect {
@@ -5,12 +6,12 @@ class BaseProvider extends GetConnect {
   void onInit() {
     baseUrl = 'https://dummyjson.com';
     httpClient.addRequestModifier<void>((request) {
-      print('Add Token');
+      debugPrint('Add Token');
       request.headers['token'] = '123456';
       return request;
     });
     httpClient.addResponseModifier((request, reponse) {
-      print('Add Response');
+      debugPrint('Add Response');
       return reponse;
     });
     super.onInit();

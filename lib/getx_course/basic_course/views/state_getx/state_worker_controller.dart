@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class StateWorkerController extends GetxController {
@@ -8,18 +9,18 @@ class StateWorkerController extends GetxController {
   @override
   void onInit() {
     ever(_counter, (value) {
-      print('Ever $value');
+      debugPrint('Ever $value');
     });
     once(_counter, (value) {
-      print('Once $value');
+      debugPrint('Once $value');
     });
     debounce(
       _counter,
-      (value) => {print('Debounce $value')},
+      (value) => {debugPrint('Debounce $value')},
       time: Duration(seconds: 2),
     );
     interval(_counter, (value) {
-      print('Interval $value');
+      debugPrint('Interval $value');
     }, time: Duration(seconds: 1));
     super.onInit();
   }

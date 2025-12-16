@@ -16,7 +16,7 @@ class StateGetxPage extends StatelessWidget {
               init: countController,
               initState: (_) {},
               builder: (controller) {
-                print('Value 1');
+                debugPrint('Value 1');
                 return Text('Value 1 - ${controller.count1}');
               },
             ),
@@ -24,7 +24,7 @@ class StateGetxPage extends StatelessWidget {
               init: countController,
               initState: (_) {},
               builder: (controller) {
-                print('Value 2');
+                debugPrint('Value 2');
                 return Text(
                   'Value 2 - ${controller.count1} - ${controller.count2}',
                 );
@@ -34,7 +34,7 @@ class StateGetxPage extends StatelessWidget {
               init: countController,
               initState: (_) {},
               builder: (controller) {
-                print('Value 3');
+                debugPrint('Value 3');
                 return Text('Value 3 - ${controller.count1}');
               },
             ),
@@ -48,7 +48,7 @@ class StateGetxPage extends StatelessWidget {
               init: countController,
               initState: (_) {},
               builder: (controller) {
-                print('Value 4');
+                debugPrint('Value 4');
                 return Text('Value 4 - ${controller.count2}');
               },
             ),

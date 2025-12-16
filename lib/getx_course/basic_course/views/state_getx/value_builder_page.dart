@@ -25,8 +25,8 @@ class ValueBuilderPage extends StatelessWidget {
               ],
             );
           },
-          onDispose: () => print('Dispose'),
-          onUpdate: (count) => print('Update Value $count'),
+          onDispose: () => debugPrint('Dispose'),
+          onUpdate: (count) => debugPrint('Update Value $count'),
         ),
       ),
     );

@@ -14,6 +14,11 @@ class BasicCourseAppMain extends StatelessWidget {
       locale: TranslationService.locale,
       fallbackLocale: TranslationService.fallbackLocal,
       translations: TranslationService(),
+      routingCallback: (Routing? routing) {
+        debugPrint(
+          'from: ${routing?.previous} -> to: ${routing?.current}, back: ${routing?.isBack}',
+        );
+      },
     );
   }
 }
