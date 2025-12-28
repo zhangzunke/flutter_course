@@ -78,6 +78,7 @@ flutter:
     - assets/doctor-appoinment/doctors/
     - assets/doctor-appoinment/reviews/
     - assets/todo/
+    - assets/training_app/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
