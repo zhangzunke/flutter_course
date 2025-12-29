@@ -12,13 +12,13 @@ class VideoInfo extends StatefulWidget {
 }
 
 class _VideoInfoState extends State<VideoInfo> {
-  List info = [];
+  List videoInfo = [];
   _initData() {
     DefaultAssetBundle.of(
       context,
     ).loadString('json/training_app/video_info.json').then((value) {
       setState(() {
-        info = jsonDecode(value);
+        videoInfo = jsonDecode(value);
       });
     });
   }
@@ -205,12 +205,103 @@ class _VideoInfoState extends State<VideoInfo> {
                         SizedBox(width: 20),
                       ],
                     ),
+                    SizedBox(height: 20),
+                    Expanded(child: _listView(screenWidth)),
                   ],
                 ),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  ListView _listView(double screenWidth) {
+    return ListView.builder(
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+      itemCount: videoInfo.length,
+      itemBuilder: (_, index) {
+        return GestureDetector(
+          onTap: () {},
+          child: _buildCard(screenWidth, index),
+        );
+      },
+    );
+  }
+
+  SizedBox _buildCard(double screenWidth, int index) {
+    final bottedLength = ((screenWidth - 60 - 80) / 3).toInt();
+    return SizedBox(
+      width: screenWidth,
+      height: 135,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(videoInfo[index]['thumbnail']),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              SizedBox(width: 10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    videoInfo[index]['title'],
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    videoInfo[index]['time'],
+                    style: TextStyle(color: Colors.grey[500]),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(height: 18),
+          Row(
+            children: [
+              Container(
+                width: 80,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Color(0xFFeaeefc),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Text(
+                    '15s rest',
+                    style: TextStyle(color: Color(0xFF839fed)),
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  for (int i = 0; i < bottedLength; i++)
+                    i.isEven
+                        ? Container(
+                            width: 3,
+                            height: 1,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF839fed),
+                              borderRadius: BorderRadius.circular(2),
+                            ),
+                          )
+                        : Container(width: 3, height: 1, color: Colors.white),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -18,7 +18,9 @@ class _HomePageState extends State<HomePage> {
     DefaultAssetBundle.of(
       context,
     ).loadString('json/training_app/info.json').then((value) {
-      info = jsonDecode(value);
+      setState(() {
+        info = jsonDecode(value);
+      });
     });
   }
 
